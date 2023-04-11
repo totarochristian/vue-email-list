@@ -20,7 +20,7 @@
 <body>
     <div id="app">
         <h1>{{title}}</h1>
-        <div id="mailContainer" v-if="generatedMails.length>0">
+        <div id="mailContainer" v-if="generatedMails.length==maxNumberOfMails">
             <div :id="'mail'+index" v-for="(mail,index) in generatedMails">
                 <i class="fa-regular fa-envelope"></i>
                 <span>{{mail}}</span>
