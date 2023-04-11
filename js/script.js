@@ -22,6 +22,8 @@ createApp({
     }
   },
   mounted(){
-    this.GetSingleRandomMail();
+    //Generate mails and push to the generatedMails array
+    for(let i=0; i<this.maxNumberOfMails; i++)
+      this.generatedMails.push(this.GetSingleRandomMail());
   }
 }).mount("#app");
