@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,24 +11,43 @@
     <!-- Import Axios library -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Import font-awesome library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Import bootstrap css and js-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
     <!-- Import my custom files -->
     <script src="./js/script.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div id="app">
-        <h1>{{title}}</h1>
-        <div id="mailContainer" v-if="generatedMails.length==maxNumberOfMails">
-            <div :id="'mail'+index" v-for="(mail,index) in generatedMails">
-                <i class="fa-regular fa-envelope"></i>
-                <span>{{mail}}</span>
+        <div id="mailContainer" v-if="generatedMails.length==maxNumberOfMails" class="p-3 pb-4 container-fluid d-flex justify-content-center align-items-center">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{title}}</h5>
+                    <p class="card-text">{{description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex align-items-center gap-2" :id="'mail'+index"
+                        v-for="(mail,index) in generatedMails">
+                        <i class="fa-regular fa-envelope"></i>
+                        <span>{{mail}}</span>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <h6>Link di riferimento</h6>
+                    <a href="https://axios-http.com/docs/intro" target="_blank" class="card-link">Axios</a>
+                </div>
             </div>
+            <button type="button" class="btn btn-outline-primary" @click="GenerateMails">Genera mail randomiche</button>
         </div>
-        <p v-else>Nessuna mail generata!</p>
-        <button @click="GenerateMails">Genera mail randomiche</button>
     </div>
 </body>
+
 </html>
