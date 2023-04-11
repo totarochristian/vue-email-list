@@ -11,7 +11,7 @@ createApp({
   },
   methods: {
     /**
-     * Method used to return a random mail
+     * Method used to return a single random mail
      */
     async GetSingleRandomMail(){
       const res = await axios.get(this.apiRestUri);
@@ -19,9 +19,15 @@ createApp({
         return res.data.response;
       return "";
     },
+    /**
+     * Method used to remove all the mail inside the generatedMails array
+     */
     ResetGeneratedMails(){
       this.generatedMails.splice(0,this.generatedMails.length);
     },
+    /**
+     * Method used to generate all the mails to be generated
+     */
     async GenerateMails(){
       this.ResetGeneratedMails();
       //Generate mails and push to the generatedMails array
