@@ -15,6 +15,12 @@
 <body>
     <div id="app">
         <h1>{{title}}</h1>
+        <div id="mailContainer" v-if="generatedMails.length>0">
+            <div v-for="mail in generatedMails">
+
+            </div>
+        </div>
+        <p v-else>Nessuna mail generata!</p>
     </div>
 </body>
 </html>
