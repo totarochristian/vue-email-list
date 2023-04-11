@@ -40,12 +40,13 @@
                         <span>{{mail}}</span>
                     </li>
                 </ul>
-                <div class="card-body">
+                <div class="card-body d-flex flex-column">
                     <h6>Link di riferimento</h6>
                     <a href="https://axios-http.com/docs/intro" target="_blank" class="card-link">Axios</a>
+                    <hr>
+                    <button type="button" class="btn btn-outline-primary" @click="GenerateMails">Genera mail randomiche</button>
                 </div>
             </div>
-            <button type="button" class="btn btn-outline-primary" @click="GenerateMails">Genera mail randomiche</button>
         </div>
     </div>
 </body>
