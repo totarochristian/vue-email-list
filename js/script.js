@@ -8,6 +8,9 @@ createApp({
     }
   },
   methods: {
+    /**
+     * Method used to return a random mail
+     */
     GetSingleRandomMail(){
       axios.get(this.apiRestUri).then((res)=>{
         if(res.data.success)
