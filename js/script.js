@@ -19,11 +19,18 @@ createApp({
           return res.data.response;
         return "";
       });
+    },
+    ResetGeneratedMails(){
+      this.generatedMails.splice(0,this.generatedMails.length);
+    },
+    GenerateMails(){
+      this.ResetGeneratedMails();
+      //Generate mails and push to the generatedMails array
+      for(let i=0; i<this.maxNumberOfMails; i++)
+        this.generatedMails.push(this.GetSingleRandomMail());
     }
   },
   mounted(){
-    //Generate mails and push to the generatedMails array
-    for(let i=0; i<this.maxNumberOfMails; i++)
-      this.generatedMails.push(this.GetSingleRandomMail());
+    this.GenerateMails();
   }
 }).mount("#app");
