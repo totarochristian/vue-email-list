@@ -4,7 +4,9 @@ createApp({
   data(){
     return {
       title: "Lista di e-mail randomiche",
-      apiRestUri: "https://flynn.boolean.careers/exercises/api/random/mail"
+      apiRestUri: "https://flynn.boolean.careers/exercises/api/random/mail",
+      maxNumberOfMails: 10,
+      generatedMails: []
     }
   },
   methods: {
