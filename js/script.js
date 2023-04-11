@@ -10,7 +10,9 @@ createApp({
   methods: {
     GetSingleRandomMail(){
       axios.get(this.apiRestUri).then((res)=>{
-        console.log(res);
+        if(res.data.success)
+          return res.data.response;
+        return "";
       });
     }
   },
