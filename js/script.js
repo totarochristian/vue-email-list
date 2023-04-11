@@ -8,9 +8,13 @@ createApp({
     }
   },
   methods: {
-
+    GetSingleRandomMail(){
+      axios.get(this.apiRestUri).then((res)=>{
+        console.log(res);
+      });
+    }
   },
   mounted(){
-
+    this.GetSingleRandomMail();
   }
 }).mount("#app");
